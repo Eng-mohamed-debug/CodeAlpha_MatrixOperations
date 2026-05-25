@@ -1,12 +1,19 @@
 #ifndef MATRIX_H
 #define MATRIX_H
-
+#include <stdlib.h>
 typedef struct {
     unsigned int rows;
     unsigned int cols;
     int is_square;
     double** data;
 } Matrix;
+
+Matrix INVALID_MATRIX = {
+    0,
+    0,
+    1,
+    NULL
+}; // make this matrix to handle errors
 
 Matrix createMatrix(int rows, int cols);      // Create a matrix  
 void printMat(Matrix mat);                   // function to print the matrix
