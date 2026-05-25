@@ -1,5 +1,12 @@
 #include "Matrix.h"
 
+Matrix INVALID_MATRIX = {
+    0,
+    0,
+    1,
+    NULL
+}; // make this matrix to handle errors
+
 Matrix createMatrix(int rows, int cols)
 {
     Matrix mat;
@@ -51,12 +58,25 @@ Matrix addMatrices(Matrix A, Matrix B)
     {
         return INVALID_MATRIX;
     }
-    Matrix result = A;
+    Matrix result = createMatrix(A.rows, A.cols);
     for (int i = 0; i < A.rows; i++)
     {
         for (int j = 0; j < A.cols; j++)
         {
             A.data[i][j] += B.data[i][j];
+        }
+    }
+    return result;
+}
+
+Matrix transpose(Matrix mat)
+{
+    Matrix result = createMatrix(mat.cols, mat.rows);
+    for(int i = 0; i < result.rows; i++)
+    {
+        for(int j = 0; j < result.cols; j++)
+        {
+            result.data[i][j] = mat.data[j][i];
         }
     }
     return result;
