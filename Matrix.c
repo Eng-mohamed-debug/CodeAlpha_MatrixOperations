@@ -88,7 +88,7 @@ void printMatrix(Matrix mat, char* element_sep, char* rows_sep)
     {
         for(int j = 0; j < mat.cols; j++)
         {
-            printf(element_sep);
+            printf("%f%s", mat.data[i][j], element_sep);
         }
         printf(rows_sep);
     }
