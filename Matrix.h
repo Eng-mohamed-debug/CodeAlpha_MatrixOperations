@@ -16,4 +16,5 @@ Matrix addMatrices(Matrix A, Matrix B);      // to add two matrices together
 Matrix transpose(Matrix mat);                // transpose a matrix 
 int areEqual(Matrix A,  Matrix B);           // Checks if two matrices are equal
 void multiplyScalar(Matrix mat, double scalar); // scalar multiplication
+void freeMatrix(Matrix* mat);
 #endif

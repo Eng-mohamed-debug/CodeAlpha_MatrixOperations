@@ -93,3 +93,13 @@ void printMatrix(Matrix mat, char* element_sep, char* rows_sep)
         printf(rows_sep);
     }
 }
+
+void freeMatrix(Matrix* mat)
+{
+    for(int i = 0; i < mat->rows; i++)
+    {
+        free(mat->data[i]);
+    }
+    free(mat->data);
+    mat->data = NULL;
+}
