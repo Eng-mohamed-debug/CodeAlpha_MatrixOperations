@@ -33,7 +33,7 @@ int areEqual(const Matrix A, const Matrix B)
     {
         for (int j = 0; j < A.cols; j++)
         {
-            if (A.data[i][j] != B.data[i][j])
+            if (fabs(A.data[i][j] - B.data[i][j]) < 1e-9)
             {
                 return 0;
             }
