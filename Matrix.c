@@ -97,10 +97,13 @@ void printMatrix(Matrix mat, char* element_sep, char* rows_sep)
 
 void freeMatrix(Matrix* mat)
 {
+    if (!mat || !mat->data) return;
     for(int i = 0; i < mat->rows; i++)
     {
         free(mat->data[i]);
     }
+    mat->rows = 0;
+    mat->cols = 0;
     free(mat->data);
     mat->data = NULL;
 }
