@@ -3,7 +3,7 @@
 Matrix INVALID_MATRIX = {
     0,
     0,
-    1,
+    0,
     NULL
 }; // make this matrix to handle errors
 
@@ -15,6 +15,7 @@ Matrix createMatrix(int rows, int cols)
     mat.is_square = (rows == cols);
 
     mat.data = malloc(rows * sizeof(double *)); // Each row will be a pointer to an array (double pointer)
+    if (!mat.data) return INVALID_MATRIX;
     for (int i = 0; i < rows; i++)
     {
         mat.data[i] = calloc(cols, sizeof(double)); // all elements will be initialized to zero
