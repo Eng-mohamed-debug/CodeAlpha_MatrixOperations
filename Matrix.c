@@ -23,7 +23,7 @@ Matrix createMatrix(int rows, int cols)
     return mat;
 };
 
-int areEqual(Matrix A, Matrix B)
+int areEqual(const Matrix A, const Matrix B)
 {
     if (A.rows != B.rows || A.cols != B.cols)
     {
