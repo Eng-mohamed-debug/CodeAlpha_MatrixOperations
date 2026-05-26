@@ -11,6 +11,7 @@ typedef struct {
 
 
 Matrix createMatrix(int rows, int cols);      // Create a matrix  
+Matrix createMatrixFromArray(int rows, int cols, double data[rows][cols]);
 void printMatrix(Matrix mat, char* element_sep, char* rows_sep);                   // function to print the matrix
 Matrix addMatrices(Matrix A, Matrix B);      // to add two matrices together
 Matrix transpose(Matrix mat);                // transpose a matrix 

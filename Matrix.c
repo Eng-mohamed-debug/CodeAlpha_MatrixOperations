@@ -23,6 +23,19 @@ Matrix createMatrix(int rows, int cols)
     return mat;
 };
 
+Matrix createMatrixFromArray(int rows, int cols, double data[rows][cols])
+{
+    Matrix mat = createMatrix(rows, cols);
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            mat.data[i][j] = data[i][j];
+        }
+    }
+    return mat;
+}
+
 int areEqual(const Matrix A, const Matrix B)
 {
     if (A.rows != B.rows || A.cols != B.cols)
