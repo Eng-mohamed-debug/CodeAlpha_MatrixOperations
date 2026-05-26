@@ -63,7 +63,7 @@ Matrix addMatrices(Matrix A, Matrix B)
     {
         for (int j = 0; j < A.cols; j++)
         {
-            A.data[i][j] += B.data[i][j];
+            result.data[i][j] = A.data[i][j] + B.data[i][j];
         }
     }
     return result;
