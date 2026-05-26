@@ -81,3 +81,15 @@ Matrix transpose(Matrix mat)
     }
     return result;
 }
+
+void printMatrix(Matrix mat, char* element_sep, char* rows_sep)
+{
+    for(int i = 0; i < mat.rows; i++)
+    {
+        for(int j = 0; j < mat.cols; j++)
+        {
+            printf(element_sep);
+        }
+        printf(rows_sep);
+    }
+}
