@@ -46,7 +46,7 @@ int areEqual(const Matrix A, const Matrix B)
     {
         for (int j = 0; j < A.cols; j++)
         {
-            if (fabs(A.data[i][j] - B.data[i][j]) < 1e-9)
+            if (fabs(A.data[i][j] - B.data[i][j]) > 1e-9)
             {
                 return 0;
             }
@@ -98,6 +98,7 @@ Matrix multiplyMatrices(Matrix A, Matrix B)
             }
         }
     }
+    return result;
 }
 
 Matrix transpose(Matrix mat)
@@ -119,7 +120,7 @@ void printMatrix(Matrix mat, char* element_sep, char* rows_sep)
     {
         for(int j = 0; j < mat.cols; j++)
         {
-            printf("%f%s", mat.data[i][j], element_sep);
+            printf("%.2f%s", mat.data[i][j], element_sep);
         }
         printf(rows_sep);
     }

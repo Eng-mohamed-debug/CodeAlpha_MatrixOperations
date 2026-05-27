@@ -2,6 +2,7 @@
 #define MATRIX_H
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 typedef struct {
     unsigned int rows;
     unsigned int cols;
