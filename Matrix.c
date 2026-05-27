@@ -83,6 +83,23 @@ Matrix addMatrices(Matrix A, Matrix B)
     return result;
 }
 
+Matrix multiplyMatrices(Matrix A, Matrix B)
+{
+    if(A.cols != B.rows) return INVALID_MATRIX;
+    Matrix result = createMatrix(A.rows, B.cols);
+
+    for(int i = 0; i < A.rows; i++)
+    {
+        for(int j = 0; j < B.cols; j++)
+        {
+            for(int k = 0; k < A.cols; k++)
+            {
+                result.data[i][j] += A.data[i][k] * B.data[k][j];
+            }
+        }
+    }
+}
+
 Matrix transpose(Matrix mat)
 {
     Matrix result = createMatrix(mat.cols, mat.rows);
